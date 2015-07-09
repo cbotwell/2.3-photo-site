@@ -1,0 +1,21 @@
+  {
+  "name": "2.3-photo-site",
+  "version": "0.0.0",
+  "homepage": "2.3-photo-site",
+  "authors": [
+    "Corbin Otwell <your email>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reset-css": "~2.0.2011012602",
+    "fontawesome": "~4.3.0",
+    "neat": "~1.7.2"
+  }
+}
