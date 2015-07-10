@@ -3,6 +3,8 @@
 $fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
 @import 'font-awesome';
 
+$tablet: max-width 1024px;
+$mobile: max-width 480px;
 @import 'bourbon';
 @import 'neat';
 
@@ -33,18 +35,17 @@ body {
         color: $accent-color;
     }
 }
-nav, .header {
-    @include span-columns(12);
-}
 nav {
     font-size: 1.25em;
     text-align: center;
+    overflow: auto;
+    margin: 20px;
     li {
         float: left;
         margin: 0 10px;
     }
     .left {
-        @include span-columns(3);
+        float: left;
 
         li:first-of-type {
             margin-right: 0;
@@ -58,8 +59,7 @@ nav {
         }
     }
     .right {
-        @include span-columns(3);
-        @include shift(9);
+        float: right;
 
         li:nth-child(2) a {
             color: $accent-color;
@@ -73,27 +73,29 @@ nav {
     text-align: center;
     margin-bottom: 50px;
     figure {
-        @include span-columns(2);
-        @include shift(5);
+        max-width: 15%;
+        margin: auto;
         position: relative;
+
         img {
             border-radius: 50%;
+            width: 50%;
         }
         figcaption {
             position: absolute;
-            left: 30%;
-            bottom: 10%;
+            top: 75%;
+            right: 30%;
         }
     }
 }
 body > figure {
-    @include outer-container(1024px);
-    position: relative;
+    width: 50%;
+    margin: auto;
     margin-bottom: 50px;
+    position: relative;
 
-    img, figcaption {
-        @include span-columns(6);
-        @include shift(3);
+    img {
+        max-width: 100%;
     }
     figcaption {
         font-size: 1.5em;
@@ -105,29 +107,43 @@ body > figure {
         color: $text-color;
     }
     .specs {
-        @include span-columns(3);
+        float: none;
         position: absolute;
         top: 0;
-        right: -50px;
+        right: -130px;
+
+        p:first-of-type {
+            color: $accent-color;
+            i {
+                color: $text-color;
+            }
+        }
     }
 }
 footer {
-    @include span-columns(6);
-    @include shift(3);
     text-align: center;
-
-    figure {
-        @include row();
-    }
+    width: 50%;
+    margin: auto;
     p {
         color: $hover-color;
         margin-bottom: 1em;
     }
     a {
+        width: 50%;
         float: left;
-        margin: 10px;
-    }
-    figcaption {
-        margin-top: 1em;
+
+        figure {
+            float: left;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+            padding: 5px;
+        }
+        figcaption {
+            margin-top: 1em;
+        }
     }
 }
