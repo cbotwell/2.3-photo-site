@@ -9,6 +9,7 @@ $fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
 $bg-color: #181818;
 $accent-color: #D62626;
 $text-color: #464246;
+$hover-color: white;
 
 html {
   font-family: sans-serif;
@@ -25,7 +26,10 @@ body {
         color: $text-color;
         text-decoration: none;
     }
-    li a:hover, a:hover figcaption {
+    li:hover a {
+        color: $hover-color;
+    }
+    a:hover figcaption {
         color: $accent-color;
     }
 }
@@ -34,35 +38,33 @@ nav, .header {
 }
 nav {
     font-size: 1.25em;
-
+    li {
+        float: left;
+        margin: 0 10px;
+    }
     .left {
-        @include span-columns(2);
+        @include span-columns(3);
 
-        i, h1 {
-            float: left;
-            margin: 0 10px;
+        li:first-of-type {
+            margin-right: 0;
         }
-        a:first-of-type:after {
+        li:first-of-type:after {
             content: " /";
             color: $text-color;
         }
-        a h1 {
-            color: white;
+        li:last-of-type a {
+            color: $hover-color;
         }
     }
     .right {
         @include span-columns(3);
         @include shift(9);
 
-        li {
-            float: left;
-            margin: 0 10px;
-        }
         li:nth-child(2) a {
             color: $accent-color;
         }
         li:nth-child(2) a:hover {
-            color: $text-color;
+            color: $hover-color;
         }
     }
 }
