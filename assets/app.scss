@@ -1,5 +1,7 @@
 @import 'reset-css/reset';
 
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+
 $fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
 @import 'font-awesome';
 
@@ -14,7 +16,7 @@ $text-color: #464246;
 $hover-color: white;
 
 html {
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -67,6 +69,23 @@ nav {
         li:nth-child(2) a:hover {
             color: $hover-color;
         }
+        ul {
+            @include media($tablet) {
+                display: none;
+            }
+        }
+        > a {
+            display: none;
+            font-size: 1.5em;
+            @include media($tablet) {
+                display: block;
+            }
+        }
+        > a:hover {
+            @include media($tablet) {
+                color: $hover-color;
+            }
+        }
     }
 }
 .header {
@@ -80,11 +99,29 @@ nav {
         img {
             border-radius: 50%;
             width: 50%;
+            @include media($tablet) {
+                width: 90%;
+            }
+            @include media($mobile) {
+                width: 100%;
+            }
         }
         figcaption {
+            font-size: 1.2em;
+            font-weight: bold;
             position: absolute;
             top: 75%;
-            right: 30%;
+            right: 27%;
+
+            @include media($tablet) {
+                font-size: 1em;
+                right: 22%;
+            }
+            @include media($mobile) {
+                font-size: 1em;
+                top: 60%;
+                right: 9%;
+            }
         }
     }
 }
@@ -93,7 +130,12 @@ body > figure {
     margin: auto;
     margin-bottom: 50px;
     position: relative;
-
+    @include media($tablet) {
+        width: 75%;
+    }
+    @include media($mobile) {
+        width: 90%;
+    }
     img {
         max-width: 100%;
     }
@@ -107,10 +149,14 @@ body > figure {
         color: $text-color;
     }
     .specs {
-        float: none;
         position: absolute;
         top: 0;
         right: -130px;
+
+        @include media($tablet) {
+                position: static;
+                margin-top: 20px;
+            }
 
         p:first-of-type {
             color: $accent-color;
@@ -124,6 +170,13 @@ footer {
     text-align: center;
     width: 50%;
     margin: auto;
+
+    @include media($tablet) {
+        width: 75%;
+    }
+    @include media($mobile) {
+        width: 90%;
+    }
     p {
         color: $hover-color;
         margin-bottom: 1em;
@@ -143,7 +196,10 @@ footer {
             padding: 5px;
         }
         figcaption {
-            margin-top: 1em;
+            margin: 1em 0;
+            @include media($mobile) {
+                padding: 0 5px;
+            }
         }
     }
 }
