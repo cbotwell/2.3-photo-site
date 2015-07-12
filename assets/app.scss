@@ -157,7 +157,9 @@ body > figure {
                 position: static;
                 margin-top: 20px;
             }
-
+        p {
+            margin-bottom: 0.5em;
+        }
         p:first-of-type {
             color: $accent-color;
             i {
