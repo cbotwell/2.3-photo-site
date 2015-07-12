@@ -1905,67 +1905,51 @@ nav {
   text-align: center;
   margin-bottom: 50px; }
   .header figure {
-    max-width: 15%;
+    max-width: 100px;
     margin: auto;
     position: relative; }
     .header figure img {
       border-radius: 50%;
-      width: 50%; }
-      @media screen and (max-width: 1024px) {
-        .header figure img {
-          width: 70%; } }
-      @media screen and (max-width: 480px) {
-        .header figure img {
-          width: 100%; } }
+      width: 100px; }
     .header figure figcaption {
       font-size: 1.2em;
       font-weight: bold;
       position: absolute;
-      top: 75%;
-      right: 27%; }
-      @media screen and (max-width: 1024px) {
-        .header figure figcaption {
-          font-size: 1em;
-          right: 22%; } }
-      @media screen and (max-width: 480px) {
-        .header figure figcaption {
-          font-size: 1em;
-          top: 60%;
-          right: 9%; } }
+      top: 75%; }
 
-body > figure {
+.post {
   width: 50%;
   margin: auto;
   margin-bottom: 50px;
   position: relative; }
   @media screen and (max-width: 1024px) {
-    body > figure {
+    .post {
       width: 75%; } }
   @media screen and (max-width: 480px) {
-    body > figure {
+    .post {
       width: 90%; } }
-  body > figure img {
+  .post img {
     width: 100%; }
-  body > figure figcaption {
+  .post figcaption {
     font-size: 1.5em;
     color: #c5c2c5;
     margin-top: 1em; }
-  body > figure figcaption span {
+  .post figcaption span {
     font-size: .6em;
     color: #464246; }
-  body > figure .specs {
+  .post .specs {
     position: absolute;
     top: 0;
     right: -130px; }
     @media screen and (max-width: 1024px) {
-      body > figure .specs {
+      .post .specs {
         position: static;
         margin-top: 20px; } }
-    body > figure .specs p {
+    .post .specs p {
       margin-bottom: 0.5em; }
-    body > figure .specs p:first-of-type {
+    .post .specs p:first-of-type {
       color: #D62626; }
-      body > figure .specs p:first-of-type i {
+      .post .specs p:first-of-type i {
         color: #464246; }
 
 footer {
