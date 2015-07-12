@@ -70,19 +70,19 @@ nav {
             color: $hover-color;
         }
         ul {
-            @include media($tablet) {
+            @include media($mobile) {
                 display: none;
             }
         }
         > a {
             display: none;
             font-size: 1.5em;
-            @include media($tablet) {
+            @include media($mobile) {
                 display: block;
             }
         }
         > a:hover {
-            @include media($tablet) {
+            @include media($mobile) {
                 color: $hover-color;
             }
         }
