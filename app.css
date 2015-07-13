@@ -1856,7 +1856,8 @@ html {
 
 body {
   background: #181818;
-  color: #464246; }
+  color: #464246;
+  overflow-x: hidden; }
   body a {
     color: #464246;
     text-decoration: none; }
@@ -1865,11 +1866,75 @@ body {
   body a:hover figcaption {
     color: #D62626; }
 
+.pop-out-nav {
+  list-style: none;
+  font-size: 1.25em;
+  background: #252525;
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  text-align: center;
+  margin: auto; }
+  .pop-out-nav li {
+    margin: 20px 0; }
+  .pop-out-nav li:nth-child(2) a {
+    color: #D62626; }
+  .pop-out-nav li:nth-child(2) a:hover {
+    color: white; }
+
+.nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0); }
+
+.fa-bars {
+  font-size: 1.75em;
+  color: #464246; }
+
+.fa-bars:hover {
+  color: white; }
+
+label[for="nav-trigger"] {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-size: contain;
+  display: none; }
+  @media screen and (max-width: 480px) {
+    label[for="nav-trigger"] {
+      display: block; } }
+
+.nav-trigger:checked + label {
+  right: 215px; }
+
+.nav-trigger:checked ~ .wrapper {
+  right: 200px; }
+
+.nav-trigger + label, .wrapper {
+  transition: right 0.2s; }
+
+.wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  background: #181818;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  right: 0;
+  z-index: 1; }
+
 nav {
   font-size: 1.25em;
   text-align: center;
   overflow: auto;
-  margin: 20px; }
+  margin: 0;
+  padding: 20px; }
   nav li {
     float: left;
     margin: 0 10px; }
@@ -1955,7 +2020,8 @@ nav {
 footer {
   text-align: center;
   width: 50%;
-  margin: auto; }
+  margin: auto;
+  overflow: auto; }
   @media screen and (max-width: 1024px) {
     footer {
       width: 75%; } }
