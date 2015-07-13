@@ -22,6 +22,7 @@ html {
 body {
     background: $bg-color;
     color: $text-color;
+    overflow-x: hidden;
 
     a {
         color: $text-color;
@@ -35,13 +36,89 @@ body {
     }
 }
 
+// Pop-Out-Nav
+
+.pop-out-nav {
+    list-style: none;
+    font-size: 1.25em;
+    background: lighten($bg-color, 5%);
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    text-align: center;
+    margin: auto;
+
+    li{
+        margin: 20px 0;
+    }
+    li:nth-child(2) a {
+        color: $accent-color;
+    }
+    li:nth-child(2) a:hover {
+        color: $hover-color;
+    }
+}
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+.fa-bars {
+    font-size: 1.75em;
+    color: $text-color;
+}
+.fa-bars:hover {
+    color: $hover-color;
+}
+label[for="nav-trigger"] {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-size: contain;
+    display: none;
+
+    @include media($mobile) {
+        display: block;
+    }
+}
+.nav-trigger:checked + label {
+    right: 215px;
+}
+
+.nav-trigger:checked ~ .wrapper {
+    right: 200px;
+}
+.nav-trigger + label, .wrapper {
+    transition: right 0.2s;
+}
+// Wrapper
+
+.wrapper {
+    min-width: 100%;
+    min-height: 100%;
+    background: $bg-color;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
 // Navigation
 
 nav {
     font-size: 1.25em;
     text-align: center;
     overflow: auto;
-    margin: 20px;
+    margin: 0;
+    padding: 20px;
+
     li {
         float: left;
         margin: 0 10px;
@@ -164,6 +241,7 @@ footer {
     text-align: center;
     width: 50%;
     margin: auto;
+    overflow: auto;
 
     @include media($tablet) {
         width: 75%;
